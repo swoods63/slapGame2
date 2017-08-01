@@ -5,18 +5,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Slap Game 2</title>
-    <link rel="stylesheet" href="styles/game.css">
+    <title>Slap Object Game2</title>
+    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
-    <h1>My horse</h1>
-    <div id="horse">
+    <header class="container-fluid">
+        <div style="text-align:center;border:20px solid white">
+            <h1>The <span style="color:blue">SLAP</span> Game2</h1>
+            <span>Health:<span id="health"></span>
+        </div>
+    </header>
 
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <img src=" https://previews.123rf.com/images/insima/insima1310/insima131000013/23013771-cartoon-horse-isolated-on-white-background-Stock-Vector-comic.jpg" alt=" cartoon horse pic " width="200">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div class="value" id="hits">
+                    <span>Hits:<span id=" hits"></span>hits</span>
+                </div>
+                <div class="label">
+                    <span>Health:<span id="health"></span></Span>
+                </div>
+                <div class="value">
+                    <span>Name:<span id="name"></span>
+                </div>
+            </div>
+        </div>
     </div>
 
 
 
+
+    <footer class="container">
+        <div class="row text-center">
+            <div class="col-md-2 col-md-offset-2">
+                <button type="button" onclick="slap()" class=" btn btn-primary "><span id="slap">Slap</span></button>
+            </div>
+
+            <div class="col-md-2 col-md-offset-1">
+                <button type="button" onclick="punch()" class="btn btn-warning "><span id="kick">Punch</span></button>
+            </div>
+
+            <div class="col-md-2 col-md-offset-1 ">
+                <button type="button" onclick="kick()" class="btn btn-danger "><span id="punch">Kick</span></button>
+            </div>
+
+        </div>
+
+        <div class="row text-center">
+            <div class="col-md-2 col-md-offset-2">
+                <button type="button" onclick="app.addItems(items.rope)" id="rope">Rope</button>
+
+            </div>
+
+            <div class="col-md-2 col-md-offset-1">
+                <button type="button" onclick="blanket()" class="btn"><span id="blanket">Blanket</span></button>
+            </div>
+
+            <div class="col-md-2 col-md-offset-1 ">
+                <button type="button" onclick="saddle()" class="btn"><span id="saddle">Saddle</span></button>
+            </div>
+
+        </div>
+
+
+
+
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="game.js"></script>
 </body>
 
