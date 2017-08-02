@@ -1,10 +1,4 @@
 var health = 100;
-
-function slap() {
-    health = health - 1;
-    alert(health);
-}
-var health = 100;
 var name = "Bucky";
 var hits = 0;
 var healthWire = document.getElementById("health");
@@ -15,46 +9,38 @@ var itemsWire = document.getElementById("items");
 function update() {
     if (health < 0) {
         health = 0;
-    }
+    };
     healthWire.innerHTML = health;
     hitsWire.innerHTML = hits;
 
-}
+};
+var hitValue = {
+    punch: 5,
+    kick: 10,
+    slap: 1
+};
 
-function slap() {
+
+function hit(value, mod) {
+    var modValue = mod();
+
     if (health > 0) {
-        health = health - 1;
+        value = value - modValue;
+        health = health - value;
         hits++;
         update();
-    }
-}
-
-function punch() {
-    if (health > 0) {
-        health = health - 5;
-        hits++;
-        update();
-    }
-}
-
-
-function kick() {
-    if (health > 0) {
-        health = health - 10;
-        hits++;
-        update();
-    }
-}
+    };
+};
 
 var Item = function(name, modifier, description) {
     this.name = name;
     this.modifier = modifier;
     this.description = description;
-}
+};
 
 var items = {
     rope: new Item("rope", 0.2, "This will hold you!"),
-    blanket: new Item("blanket", 0.2, "Just going to get this blanket on you!"),
+    blanket: new Item("blanket", 0.3, "Just going to get this blanket on you!"),
     saddle: new Item("saddle", 0.5, "Okay I got you now!!")
 }
 
@@ -62,17 +48,21 @@ var target = {
     health: 100,
     name: "Bucky",
     hits: 0,
-    items: [items.rope],
+    items: [],
     addMods: function() {
         var totalMod = 0;
         for (var i = 0; i < target.items.length; i++) {
             var mod = target.items[i].modifier;
+            totalMod += mod;
         }
         return totalMod;
     }
 }
 
+function addItem(item) {
+    target.items.push(item);
 
+}
 
 update();
 nameWire.innerHTML = name;

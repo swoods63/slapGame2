@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col-sm-12 text-center">
                 <div class="value" id="hits">
-                    <span>Hits:<span id=" hits"></span>hits</span>
+                    <span>Hits:<span id=" hits"></span>Hits</span>
                 </div>
                 <div class="label">
                     <span>Health:<span id="health"></span></Span>
@@ -50,31 +50,31 @@
     <footer class="container">
         <div class="row text-center">
             <div class="col-md-2 col-md-offset-2">
-                <button type="button" onclick="slap()" class=" btn btn-primary "><span id="slap">Slap</span></button>
+                <button type="button" onclick="hit(hitValue.slap, target.addMods)" class=" btn btn-primary "><span id="slap">Slap</span></button>
             </div>
 
             <div class="col-md-2 col-md-offset-1">
-                <button type="button" onclick="punch()" class="btn btn-warning "><span id="kick">Punch</span></button>
+                <button type="button" onclick="hit(hitValue.punch, target.addMods)" class="btn btn-warning "><span id="punch">Punch</span></button>
             </div>
 
             <div class="col-md-2 col-md-offset-1 ">
-                <button type="button" onclick="kick()" class="btn btn-danger "><span id="punch">Kick</span></button>
+                <button type="button" onclick="hit(hitValue.kick, target.addMods)" class="btn btn-danger "><span id="kick">Kick</span></button>
             </div>
 
         </div>
 
         <div class="row text-center">
             <div class="col-md-2 col-md-offset-2">
-                <button type="button" onclick="app.addItems(items.rope)" id="rope">Rope</button>
+                <button type="button" onclick="addItem(items.rope)" id="rope">Rope</button>
 
             </div>
 
             <div class="col-md-2 col-md-offset-1">
-                <button type="button" onclick="blanket()" class="btn"><span id="blanket">Blanket</span></button>
+                <button type="button" onclick="addItem(items.blanket)" class="btn"><span id="blanket">Blanket</span></button>
             </div>
 
             <div class="col-md-2 col-md-offset-1 ">
-                <button type="button" onclick="saddle()" class="btn"><span id="saddle">Saddle</span></button>
+                <button type="button" onclick="addItem(items.saddle)" class="btn"><span id="saddle">Saddle</span></button>
             </div>
 
         </div>
