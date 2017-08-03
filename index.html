@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Slap Object Game2</title>
-    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="styles.game.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
     <header class="container-fluid">
         <div style="text-align:center;border:20px solid white">
-            <h1>The <span style="color:blue">SLAP</span> Game2</h1>
+            <h1>Tame <span id="name" style="color:blue"></span> Game</h1>
             <span>Health:<span id="health"></span>
         </div>
     </header>
@@ -32,13 +32,7 @@
         <div class="row">
             <div class="col-sm-12 text-center">
                 <div class="value" id="hits">
-                    <span>Hits:<span id=" hits"></span>Hits</span>
-                </div>
-                <div class="label">
-                    <span>Health:<span id="health"></span></Span>
-                </div>
-                <div class="value">
-                    <span>Name:<span id="name"></span>
+                    <span>Hits:<span id=" hits"></span></span>
                 </div>
             </div>
         </div>
@@ -50,41 +44,41 @@
     <footer class="container">
         <div class="row text-center">
             <div class="col-md-2 col-md-offset-2">
-                <button type="button" onclick="hit(hitValue.slap, target.addMods)" class=" btn btn-primary "><span id="slap">Slap</span></button>
+                <button type="button" id="slap" class=" btn btn-primary "><span id="slap">Slap</span></button>
             </div>
 
             <div class="col-md-2 col-md-offset-1">
-                <button type="button" onclick="hit(hitValue.punch, target.addMods)" class="btn btn-warning "><span id="punch">Punch</span></button>
+                <button type="button" id="punch" class="btn btn-warning "><span id="punch">Punch</span></button>
             </div>
 
             <div class="col-md-2 col-md-offset-1 ">
-                <button type="button" onclick="hit(hitValue.kick, target.addMods)" class="btn btn-danger "><span id="kick">Kick</span></button>
+                <button type="button" id="kick" class="btn btn-danger "><span id="kick">Kick</span></button>
             </div>
 
         </div>
 
         <div class="row text-center">
-            <div class="col-md-2 col-md-offset-2">
-                <button type="button" onclick="addItem(items.rope)" id="rope">Rope</button>
-
+            <div class="col-md-2 col-md-offset-1">
+                <button id="rope" class="btn">Rope</button>
             </div>
 
             <div class="col-md-2 col-md-offset-1">
-                <button type="button" onclick="addItem(items.blanket)" class="btn"><span id="blanket">Blanket</span></button>
+                <button id="blanket" class="btn">Blanket</button>
             </div>
 
             <div class="col-md-2 col-md-offset-1 ">
-                <button type="button" onclick="addItem(items.saddle)" class="btn"><span id="saddle">Saddle</span></button>
+                <button id="saddle" class="btn">Saddle</button>
             </div>
-
         </div>
-
-
 
 
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="game.js"></script>
+    <script src="gameController.js"></script>
+    <script src="gameService.js"></script>
+    <script>
+        GameController();
+    </script>
 </body>
 
 </html>
